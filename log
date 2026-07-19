@@ -1,1 +1,14 @@
+python3 trackplot/pval_dist.py \
+  --slice_bed  /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/mir_and_baldrich_uncoll_condensedmin20_21_23.fa_gstar_421ft2.bed \
+  --bw_fwd     /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/rh_bw_genomewide/rh_bw_fwd.bw \
+  --bw_rev     /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/rh_bw_genomewide/rh_bw_rev.bw \
+  --threads 4 \
+  --slice_fa   /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/mir_and_baldrich_uncoll_condensedmin20_21_23.fa \
+  --alignments /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/baldrich_uncoll_condensed.bed \
+  --fai        /Volumes/Scratch/vef25hok/ppr/RH*fai \
+  --name rh --install trackplot/bin/data \
+  --bam        /Users/vef25hok/Downloads/ppr_srna_local/trackplot/testdata/rh/baldrich_uncoll_condensed.bam
+
+python3 trackplot/pval_dist.py --slice_bed trackplot/testdata/aras/*221ft.bed --bw_fwd trackplot/testdata/aras/aras_bw/aras_bw_fwd.bw --bw_rev trackplot/testdata/aras/aras_bw/aras_bw_rev.bw --threads 4 --slice_fa /Volumes/Scratch/vef25hok/ppr/aras/baldrich/baldrich_stk3/aras_ppregion_phasepipe/cleaveland/cl_out/mir_and_baldrich_uncoll_condensedmin30_21_23.fa --alignments /Volumes/Scratch/vef25hok/ppr/aras/baldrich/baldrich_stk3/baldrich_uncoll_condensed.bed  --fai /Volumes/Scratch/vef25hok/Athaliana_447_TAIR10.fa.fai --name aras --install trackplot/bin/data --bam trackplot/testdata/aras/*condensed.bam --transcript /Volumes/Scratch/vef25hok/ppr/aras/aratry/ara_ppregion/ara_ppregion_transcript_regions.bed
+
 python3 trackplot/pval_dist.py --slice_bed /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/nb_ppregion/cl_min6_vs_nbphasallppr/mir_and_merged_alignmentsmin6_21_23_gstar_421ft.bed --bw_fwd /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/nb_ppregion/nb_bw/nb_bw_fwd.bw --bw_rev /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/nb_ppregion/nb_bw/nb_bw_rev.bw --threads 4 --slice_fa /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/nb_ppregion/cl_min6_vs_nbphasallppr/mir_and_merged_alignmentsmin6_21_23.fa --alignments /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/nb_ppregion/merged_alignments.bed --fai /Volumes/Scratch/vef25hok/ppr/benth/NbeHZ1_genome_1.0.fa.fai --name nb --install trackplot/bin/data --bam /Volumes/Scratch/vef25hok/ppr/benth/Nbhzstk2/merged_alignments.bam
