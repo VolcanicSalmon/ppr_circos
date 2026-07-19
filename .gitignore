@@ -1,0 +1,28 @@
+# --- build artifacts ---
+obj/
+bin/trackplot
+bin/trackplot_debug
+bin/*.app/
+libBigWig/*.o
+libBigWig/*.a
+
+# --- datasets & test data (large; not code) — keep only the registry ---
+bin/data/*
+!bin/data/datasets.json
+testdata/
+
+# --- generated JBrowse tracks + user-specific proxy map ---
+jbrowse/tracks/
+jbrowse/proxies.json
+jbrowse/test_data/
+
+# --- embedded external repos (each has its own .git; not part of this project,
+#     and unreferenced by the app/tools) — keep them out of this repo ---
+gw/
+rnahybrid/
+tools/PEnG-motif/
+
+# --- python / macOS cruft ---
+**/__pycache__/
+*.pyc
+.DS_Store

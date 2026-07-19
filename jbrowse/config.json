@@ -1,0 +1,188 @@
+{
+  "assemblies": [
+    {
+      "name": "RH_v3",
+      "aliases": ["RH89-039-16_potato_genome_assembly.v3"],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "RH_v3-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": { "locationType": "UriLocation", "uri": "/ref/rh/RH_v3.asm.fa.gz" },
+          "faiLocation":   { "locationType": "UriLocation", "uri": "/ref/rh/RH_v3.asm.fa.gz.fai" },
+          "gziLocation":   { "locationType": "UriLocation", "uri": "/ref/rh/RH_v3.asm.fa.gz.gzi" }
+        }
+      }
+    },
+    {
+      "name": "NbeHZ1",
+      "aliases": ["NBE_HZ", "NbeHZ1_genome_1.0"],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "NbeHZ1-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": { "locationType": "UriLocation", "uri": "/ref/nb/NbeHZ1_genome_1.0.fa" },
+          "faiLocation":   { "locationType": "UriLocation", "uri": "tracks/NbeHZ1_genome_1.0.fa.fai" }
+        }
+      }
+    },
+    {
+      "name": "LA2093",
+      "aliases": ["Spimp_LA2093_v1.5", "LA2093_genome_v1.5"],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "LA2093-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": { "locationType": "UriLocation", "uri": "/ref/spim/LA2093_genome_v1.5.fa" },
+          "faiLocation":   { "locationType": "UriLocation", "uri": "tracks/LA2093_genome_v1.5.fa.fai" }
+        }
+      }
+    },
+    {
+      "name": "TAIR10",
+      "aliases": ["Arabidopsis_thaliana", "TAIR9", "Athaliana_447_TAIR10"],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "TAIR10-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": { "locationType": "UriLocation", "uri": "/ref/aras/TAIR9_chr_all.fa" },
+          "faiLocation":   { "locationType": "UriLocation", "uri": "/ref/aras/TAIR9_chr_all.fa.fai" }
+        }
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "type": "FeatureTrack", "trackId": "rh_v3_wm", "name": "Working Gene Models (SpudDB)",
+      "assemblyNames": ["RH_v3"], "category": ["Gene Annotation"],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": { "locationType": "UriLocation", "uri": "/ref/rh/gff/RH_v3.working_models.jb2.sort.gff3.gz" },
+        "index": { "location": { "locationType": "UriLocation", "uri": "/ref/rh/gff/RH_v3.working_models.jb2.sort.gff3.gz.tbi" } }
+      },
+      "displays": [ { "type": "LinearBasicDisplay", "displayId": "rh_v3_wm-LinearBasicDisplay" }, { "type": "LinearArcDisplay", "displayId": "rh_v3_wm-LinearArcDisplay" } ]
+    },
+    {
+      "type": "FeatureTrack", "trackId": "ppr_transcript_regions", "name": "PPR transcript regions",
+      "assemblyNames": ["RH_v3"], "category": ["PPR"],
+      "adapter": { "type": "BedAdapter", "bedLocation": { "locationType": "UriLocation", "uri": "tracks/RH_PPR_transcript_regions.bed" } }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "baldrich_condensed_sRNA", "name": "sRNA alignments (baldrich condensed)",
+      "assemblyNames": ["RH_v3"], "category": ["sRNA"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/baldrich_uncoll_condensed.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/baldrich_uncoll_condensed.sorted.bed.gz.tbi" } }
+      }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "rh_slice_sites", "name": "Predicted slice sites (RH, 421ft)",
+      "assemblyNames": ["RH_v3"], "category": ["sRNA", "targets"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/rh_slice_sites.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/rh_slice_sites.sorted.bed.gz.tbi" } }
+      }
+    },
+
+    {
+      "type": "FeatureTrack", "trackId": "nbe_wm", "name": "NbeHZ1 gene models (lifenglab)",
+      "assemblyNames": ["NbeHZ1"], "category": ["Gene Annotation"],
+      "adapter": {
+        "type": "Gff3Adapter",
+        "gffLocation": { "locationType": "UriLocation", "uri": "/ref/nb/NbeHZ1_annotation_1.0.gff3" }
+      },
+      "displays": [ { "type": "LinearBasicDisplay", "displayId": "nbe_wm-LinearBasicDisplay" }, { "type": "LinearArcDisplay", "displayId": "nbe_wm-LinearArcDisplay" } ]
+    },
+    {
+      "type": "FeatureTrack", "trackId": "nb_transcript_regions", "name": "PPR transcript regions (nb)",
+      "assemblyNames": ["NbeHZ1"], "category": ["PPR"],
+      "adapter": { "type": "BedAdapter", "bedLocation": { "locationType": "UriLocation", "uri": "tracks/nb_ppregion_transcript_regions.bed" } }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "nb_merged_alignments", "name": "sRNA alignments (nb merged)",
+      "assemblyNames": ["NbeHZ1"], "category": ["sRNA"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/nb_merged_alignments.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/nb_merged_alignments.sorted.bed.gz.tbi" } }
+      }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "nb_slice_sites", "name": "Predicted slice sites (nb, 421ft)",
+      "assemblyNames": ["NbeHZ1"], "category": ["sRNA", "targets"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/nb_slice_sites.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/nb_slice_sites.sorted.bed.gz.tbi" } }
+      }
+    },
+
+    {
+      "type": "FeatureTrack", "trackId": "spim_gm", "name": "LA2093 gene models (SolGenomics)",
+      "assemblyNames": ["LA2093"], "category": ["Gene Annotation"],
+      "adapter": { "type": "Gff3Adapter", "gffLocation": { "locationType": "UriLocation", "uri": "/ref/spim/LA2093_v1.5.gff" } }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "spim_transcript_regions", "name": "PPR transcript regions (spim)",
+      "assemblyNames": ["LA2093"], "category": ["PPR"],
+      "adapter": { "type": "BedAdapter", "bedLocation": { "locationType": "UriLocation", "uri": "tracks/sp_ppregion_transcript_regions.bed" } }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "spim_merged_alignments", "name": "sRNA alignments (spim merged)",
+      "assemblyNames": ["LA2093"], "category": ["sRNA"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/spim_merged_alignments.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/spim_merged_alignments.sorted.bed.gz.tbi" } }
+      }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "spim_slice_sites", "name": "Predicted slice sites (spim, 221ft)",
+      "assemblyNames": ["LA2093"], "category": ["sRNA", "targets"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/spim_slice_sites.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/spim_slice_sites.sorted.bed.gz.tbi" } }
+      }
+    },
+
+    {
+      "type": "FeatureTrack", "trackId": "aras_gm", "name": "Araport11 gene models (TAIR)",
+      "assemblyNames": ["TAIR10"], "category": ["Gene Annotation"],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": { "locationType": "UriLocation", "uri": "/ref/aras/q4-2024/GL.gff3.gz" },
+        "index": { "location": { "locationType": "UriLocation", "uri": "/ref/aras/q4-2024/GL.gff3.gz.tbi" } }
+      },
+      "displays": [ { "type": "LinearBasicDisplay", "displayId": "aras_gm-LinearBasicDisplay" }, { "type": "LinearArcDisplay", "displayId": "aras_gm-LinearArcDisplay" } ]
+    },
+    {
+      "type": "FeatureTrack", "trackId": "aras_transcript_regions", "name": "PPR transcript regions (aras)",
+      "assemblyNames": ["TAIR10"], "category": ["PPR"],
+      "adapter": { "type": "BedAdapter", "bedLocation": { "locationType": "UriLocation", "uri": "tracks/ara_ppregion_transcript_regions.bed" } }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "aras_reads", "name": "sRNA alignments (baldrich condensed, aras)",
+      "assemblyNames": ["TAIR10"], "category": ["sRNA"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/aras_reads.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/aras_reads.sorted.bed.gz.tbi" } }
+      }
+    },
+    {
+      "type": "FeatureTrack", "trackId": "aras_slice_sites", "name": "Predicted slice sites (aras, 221ft)",
+      "assemblyNames": ["TAIR10"], "category": ["sRNA", "targets"],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": { "locationType": "UriLocation", "uri": "tracks/aras_slice_sites.sorted.bed.gz" },
+        "index": { "indexType": "TBI", "location": { "locationType": "UriLocation", "uri": "tracks/aras_slice_sites.sorted.bed.gz.tbi" } }
+      }
+    }
+  ]
+}

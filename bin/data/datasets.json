@@ -1,0 +1,56 @@
+{
+  "datasets": [
+    {
+      "name": "rh",
+      "bw": [
+        "rh/bw/rh_bw_fwd.bw",
+        "rh/bw/rh_bw_rev.bw"
+      ],
+      "bscore": "rh/slice/rh_bscore.tsv",
+      "origins": "rh/slice/slice_bed/trigger_origins.bed",
+      "fasta": "rh/slice/slice_fa/mir_and_baldrich_uncoll_condensedmin20_21_23.fa",
+      "fai": "rh/genome/RH89-039-16_potato_genome_assembly.v3.fa.fai",
+      "jbrowse": "http://localhost:9000/?assembly=RH_v3&tracks=rh_v3_wm"
+    },
+    {
+      "name": "nb",
+      "bw": [
+        "nb/bw/nb_bw_fwd.bw",
+        "nb/bw/nb_bw_rev.bw"
+      ],
+      "bscore": "nb/slice/nb_bscore.tsv",
+      "origins": "nb/slice/slice_bed/trigger_origins.bed",
+      "fasta": "nb/slice/slice_fa/mir_and_merged_alignmentsmin6_21_23.fa",
+      "fai": "nb/genome/NbeHZ1_genome_1.0.fa.fai",
+      "jbrowse": "http://localhost:9000/?assembly=NbeHZ1&tracks=nbe_wm"
+    },
+    {
+      "name": "spim",
+      "bw": [
+        "spim/bw/spim_bw_fwd.bw",
+        "spim/bw/spim_bw_rev.bw"
+      ],
+      "bscore": "spim/slice/spim_bscore.tsv",
+      "origins": "spim/slice/slice_bed/trigger_origins.bed",
+      "fasta": "spim/slice/slice_fa/mir_and_merged_alignmentsmin6_21_23.fa",
+      "transcript": "spim/genome/sp_ppregion_transcript_regions.bed",
+      "fai": "spim/genome/LA2093_genome_v1.5.fa.fai",
+      "bam": "spim/bam/merged_alignments.bam",
+      "jbrowse": "http://localhost:9000/?assembly=LA2093&tracks=spim_gm"
+    },
+    {
+      "name": "aras",
+      "bw": [
+        "aras/bw/aras_bw_fwd.bw",
+        "aras/bw/aras_bw_rev.bw"
+      ],
+      "bscore": "aras/slice/aras_bscore.tsv",
+      "origins": "aras/slice/slice_bed/trigger_origins.bed",
+      "fasta": "aras/slice/slice_fa/mir_and_baldrich_uncoll_condensedmin30_21_23.fa",
+      "transcript": "aras/genome/ara_ppregion_transcript_regions.bed",
+      "fai": "aras/genome/Athaliana_447_TAIR10.fa.fai",
+      "bam": "aras/bam/baldrich_uncoll_condensed.bam",
+      "jbrowse": "http://localhost:9000/?assembly=TAIR10&tracks=aras_gm"
+    }
+  ]
+}
